@@ -12,113 +12,124 @@
       href="./images/favicon-32x32.png"
     />
 
-    <title>Frontend Mentor | Profile card component</title>
+    <title>Frontend Mentor | NFT preview card component</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
       body {
+        box-sizing: border-box;
+        padding: 10;
         margin: 0;
-        padding: 0;
-        font-family: "Kumbh Sans", sans-serif;
-        font-size: 18px;
-        color: hsl(229, 23%, 23%);
-        background-color: hsl(185, 75%, 39%); 
-
         display: flex;
-        flex-direction: column;
         height: 100vh;
-        text-align: center;
         justify-content: center;
+        background-color: hsl(217, 54%, 11%);
 
-        background-image: url("images/bg-pattern-top.svg"),
-          url("images/bg-pattern-bottom.svg");
-        background-color: hsl(185, 75%, 39%);
-        background-repeat: no-repeat, no-repeat;
-        background-attachment: fixed, fixed;
-        /* background-position: top -300px left -300px, bottom -300px right -300px; */
-        /* background-position: bottom 50vh right 50vw, top 50vh left 50vw; */
-        background-position: right 52vw bottom 35vh, left 48vw top 52vh;
+        font-family: "Outfit", sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        color: hsl(0, 0%, 100%);
+        /* max-width: 1440px; */
       }
       h1{
         font-size: 20px;
-        font-weight: 700;
-      }
-
-      main {
-        margin: auto;
-        /* height: auto; */
-        min-width: 350px;
-        /* max-width: 370px; */
-        background-color: #fff;
-        border-radius: 20px;
-        box-shadow: #00000018 20px 20px 50px 1px; 
+        font-weight: 600;
       }
       .card {
-        background-image: url("./images/bg-pattern-card.svg");
-        border-radius: 20px 20px 0px 0px;
-        background-position: top;
-        background-repeat: repeat-x;
-
+        min-width: 360px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-      }
-      header {
-        margin-top: 80px;
-      }
-      .profile {
-        background-image: url("./images/image-victor.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        height: 90px;
-        width: 90px;
+        justify-content: center;
+        border-radius: 20px;
 
-        border-radius: 200px;
-        border: 5px solid #ffffff;
+        background-color: hsl(216, 50%, 16%);
+        margin: auto;
+        padding-bottom: 30px;
+        width: 360px;
+        text-align: left;
+        box-shadow: 1px 30px 30px 20px hsla(211, 53%, 9%, 0.642);
       }
-
-      footer {
-        margin: 20px 0px;
-        font-size: 18px;
-        color: hsl(229, 23%, 23%);
+      .card-picture {
+        margin: 20px auto;
       }
-      
-      .title {
-        
-        margin: 10px 0px;
-        font-weight: 700;
+      .equilibrium {
+        z-index: 1;
+        position: relative;
+        border-radius: 20px;
+        padding: 10px;
+        height: 300px;
       }
-      .title span {
-        color: hsl(227, 10%, 46%) ;
-        font-weight: 400;
+      .icon-view {
+        z-index: 2;
+        position: absolute;
+        height: 0px;
+        background-color: hsla(178, 100%, 50%, 0);
+        margin: 10px 10px;
+        padding: 150px;
+        border-radius: 5px;
       }
 
+      .icon-view:hover {
+        cursor: pointer;
+        height: auto;
+        padding: 126px;
+        background-color: hsla(178, 100%, 50%, 0.411);
+      }
+
+      .titlle {
+        margin: 0px 30px;
+        font-weight: 600;
+      }
+      .titlle:hover {
+        color: hsl(178, 100%, 50%);
+        cursor: pointer;
+      }
       .subtitle {
-        color: hsl(0, 0%, 59%);
-        font-size: 14px;
-        font-weight: 400;
-        padding-bottom: 20px;
-        border-bottom: 1px solid hsla(0, 0%, 59%, 0.333);
+        margin: 10px 30px;
+        color: hsl(215, 51%, 70%);
+        font-weight: 300;
+        font-size: 16px;
+      }
+      .subtitle span {
+        color: #fff;
+      }
+      .subtitle span:hover {
+        color: hsl(178, 100%, 50%);
+        cursor: pointer;
       }
 
-      .footer-area {
+      .box {
+        margin: 10px 30px;
         display: flex;
         flex-direction: row;
-        justify-content: space-around;
-        margin: 30px;
+        justify-content: space-between;
+        border-bottom: 1px solid hsla(215, 52%, 70%, 0.296);
       }
-      .footer-title {
-        color: hsl(229, 23%, 23%);
-        font-weight: 700;
+      .box-left {
+        color: hsl(178, 100%, 50%);
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      .box-right { 
+        color: hsl(215, 51%, 70%);
+        font-weight: 300;
+        font-size: 18px;     
+      } 
+      footer {
+        margin: 10px 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: center;
+        text-align: center; 
+      }
+      .footer-image {
+        border-radius: 200px;
+        border: 2px solid #fff;
+        height: 40px;  
       }
 
-      .footer-subtitle {
-        font-size: 12px;
-        color: hsl(0, 0%, 59%);
-        font-weight: 400;
-      }
       .attribution {
         font-size: 11px;
         text-align: center;
@@ -126,43 +137,47 @@
       .attribution a {
         color: hsl(228, 45%, 44%);
       }
- 
- 
     </style>
   </head>
   <body>
-    <main>
-      <div class="card">
-        <header>
-          <div class="profile"></div>
-        </header>
+    <main class="card">
+      <div class="card-picture">
+        <img src="./images/icon-view.svg" alt="equilibrium" class="icon-view" />
+        <img
+          src="./images/image-equilibrium.jpg"
+          alt="equilibrium"
+          class="equilibrium"
+        />
       </div>
+      <h1 class="titlle">Equilibrium #3429</h1>
+      <div class="subtitle">
+        Our Equilibrium collection promotes balance and calm.
+      </div>
+
+      <div class="box">
+        <div class="box-left">
+          <img src="./images/icon-ethereum.svg" alt="coin" /> 0.041 ETH
+        </div>
+        <div class="box-right">
+          <img src="./images/icon-clock.svg" alt="view" /> 3 days left
+        </div>
+      </div>
+
       <footer>
-        <h1 class="title">Victor Crest <span>26</span></h1>
-        <div class="subtitle">London</div>
-
-        <div class="footer-area">
-          <div>
-            <div class="footer-title">80K</div>
-            <div class="footer-subtitle">Followers</div>
-          </div>
-          <div>
-            <div class="footer-title">803K</div>
-            <div class="footer-subtitle">Likes</div>
-          </div>
-          <div>
-            <div class="footer-title">1.4K</div>
-            <div class="footer-subtitle">Photos</div>
-          </div>
-        </div>
-
-        <div class="attribution">
-          Challenge by
-          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-            >Frontend Mentor</a
-          >. Coded by <a href="#">Supakorn Klampod</a>.
-        </div>
+        <img
+          class="footer-image"
+          src="./images/image-avatar.png"
+          alt="picture" 
+        />
+        <div class="subtitle">Creation of <span>Jules Wyvern</span></div>
       </footer>
     </main>
+
+    <!-- 
+  
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="#">Your Name Here</a>.
+</div> -->
   </body>
 </html>
